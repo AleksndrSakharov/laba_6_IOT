@@ -1,23 +1,13 @@
 #pragma once
-#include "Sensors.h"
-class Temp_sensor{
+#include "Base_sensor.h"
+class Temp_sensor: public Base_sensor{
 private:
-    double _temp;
-
-    void Gener(){
-        srand(time(NULL));
-        int t = -5 + rand() % 11;
-        _temp += t / 10.0;
-    }
+    
 
 public:
-    Temp_sensor(){
-        _temp = rand()%31;
-    };
+    // Temp_sensor(){
+    //     _temp = rand()%31;
+    // };
 
-    double operator()(){
-        Gener();
-        return _temp;
-    }
 };
 

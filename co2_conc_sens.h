@@ -1,26 +1,19 @@
 #pragma once
-#include "Sensors.h"
-class co2
+#include "Base_sensor.h"
+class co2: public Base_sensor
 {
 private:
-double _percent;
-    void Gener(){   
-        srand(time(NULL));
-        double a = (-100 + rand()%201)/100.0;
-       _percent+=a;
-       _percent = std::max(0.0,_percent); 
-        _percent = std::min(100.0,_percent);
-    };
-public:
-    co2(){
-        srand(time(NULL));
-        _percent = rand()%100;
 
-    };
-    double operator()(){
-        Gener();
-        return _percent;
-    };
+public:
+    // co2(){
+    //     srand(time(NULL));
+    //     _percent = rand()%100;
+
+    // };
+    // double operator()(){
+    //     Gener();
+    //     return _percent;
+    // };
 
 };
 

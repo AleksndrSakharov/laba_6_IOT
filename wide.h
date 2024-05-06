@@ -1,5 +1,5 @@
 #pragma once
-#include "Sensors.h"
+#include "Base_sensor.h"
 enum Direction{
     North,
     Northwest,
@@ -11,11 +11,12 @@ enum Direction{
     West
 };
 
-class Wide{
+class Wide: public Base_sensor{
 private:
     double _speed;
     Direction _direction;
-    void gen(){
+    void Gener(){
+        srand(time(NULL));
         double w = -10 +rand()%21;
         _speed += w/10;
         if (_speed<0) {
@@ -29,17 +30,17 @@ private:
 
 
  public:
-    Wide(){
-        _speed =  rand()%30;
-        _direction =static_cast<Direction> ( rand());
-    }
+    // Wide(){
+    //     _speed =  rand()%30;
+    //     _direction =static_cast<Direction> ( rand());
+    // }
     double GetSpeed(){
-        gen();
+        Gener();
         return _speed;
 
     }
     Direction GetDirection(){
-        gen();
+        Gener();
         return _direction;
 
     }
