@@ -1,7 +1,5 @@
-#include<random>
-#include<iostream>
-#include<time.h>
-
+#pragma once
+#include "Sensors.h"
 enum Direction{
     North,
     Northwest,

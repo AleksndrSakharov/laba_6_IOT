@@ -1,7 +1,5 @@
-#include<iostream>
-#include<random>
-#include<time.h>
-
+#pragma once
+#include "Sensors.h"
 class Humidity_sensor{
 private:
     double _procento;

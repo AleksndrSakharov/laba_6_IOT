@@ -1,9 +1,5 @@
 #pragma once
-#include<iostream>
-#include<algorithm>
-#include<random>
-#include<time.h>
-
+#include "Sensors.h"
 class co2
 {
 private:

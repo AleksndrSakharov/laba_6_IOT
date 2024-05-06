@@ -1,7 +1,5 @@
-#include<algorithm>
-#include<random>
-#include<time.h>
-
+#pragma once
+#include "Sensors.h"
 class Pressure_sensor{
 private:
     double _mercury;
