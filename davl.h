@@ -1,29 +1,17 @@
 #pragma once
-#include "Sensors.h"
-class Pressure_sensor: public Sensors{
+#include "Base_sensor.h"
+class Pressure_sensor: public Base_sensor{
 private:
-    double _mercury;
-    void Gener(){
-        srand(time(NULL));
-        double a = (-300 + rand() % 601) / 10.0;
-        _mercury += a;
-        if(_mercury > 900)
-        _mercury = MAX;
-        if(_mercury < 600)
-        _mercury = MIN;
-    }
 public:
     const int MIN = 600;
     const int MAX = 900;
-    // Pressure_sensor(){
-    //     _mercury = MIN + rand() % (MAX - MIN);
-    // }
+     Pressure_sensor(){
+         srand(time(NULL));
+         makeGen(MIN, MAX);
+     }
 
     
-    double operator()(){
-        Gener();
-        return _mercury;
-    }
+
 
 
 };

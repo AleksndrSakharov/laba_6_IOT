@@ -3,8 +3,9 @@
 class Humidity_sensor : public Base_sensor{
 private:
 public:
-    // Humidity_sensor(){
-    //     _procento = rand() % 101;
-    // }
+     Humidity_sensor(){
+         srand(time(NULL));
+         makeGen(600, 900);
+     }
     
 };

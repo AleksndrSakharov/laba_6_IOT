@@ -5,9 +5,10 @@ private:
     
 
 public:
-    // Temp_sensor(){
-    //     _temp = rand()%31;
-    // };
+     Temp_sensor(){
+         srand(time(NULL));
+         makeGen(-30, 30);
+     };
 
 };
 

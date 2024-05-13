@@ -13,17 +13,16 @@ enum Direction{
 
 class Wide: public Base_sensor{
 private:
-    double _speed;
     Direction _direction;
     void Gener(){
         srand(time(NULL));
         double w = -10 +rand()%21;
-        _speed += w/10;
-        if (_speed<0) {
-            _speed = 0;
+        _value += w/10;
+        if (_value<0) {
+            _value = 0;
         }
-        if (_speed>30){
-            _speed = 30;
+        if (_value>30){
+            _value = 30;
         }
         _direction = static_cast<Direction> (rand()%8);
     }
@@ -31,12 +30,12 @@ private:
 
  public:
     // Wide(){
-    //     _speed =  rand()%30;
+    //     _value =  rand()%30;
     //     _direction =static_cast<Direction> ( rand());
     // }
     double GetSpeed(){
         Gener();
-        return _speed;
+        return _value;
 
     }
     Direction GetDirection(){

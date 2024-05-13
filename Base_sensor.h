@@ -9,8 +9,9 @@
 
 class Base_sensor
 {
-private:
+protected:
     double _value;
+private:
     virtual void Gener(int min1, int max1){
         srand(time(NULL));
         int t = -min1*10 + rand() % (max1*10 + 1);
@@ -25,6 +26,9 @@ public:
     };
     Base_sensor(double value) : _value(value){
 
+    }
+    void makeGen(int minim, int maxim){
+        Gener(minim, maxim);
     }
 };
 
