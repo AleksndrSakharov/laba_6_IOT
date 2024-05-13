@@ -9,5 +9,5 @@ public:
          srand(time(NULL));
         //  makeGen(_min, _max);
      }
-    
+    std::string getClassName(){return "Humidity_sensor";};
 };

@@ -11,6 +11,8 @@ class Base_sensor
 {
 protected:
     double _value;
+    static const int _max = 100;
+    static const int _min = 0;
 private:
     virtual void Gener(int _min, int _max){
         srand(time(NULL));
@@ -29,6 +31,11 @@ public:
         srand(time(NULL));
         Gener(minim, maxim);
     }
+    virtual std::string getClassName(){return "Base_sensor";};
+    virtual void changeValueBase(){
+        srand(time(NULL));
+
+    };
     inline double getValue(){return _value;};
 };
 

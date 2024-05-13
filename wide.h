@@ -45,6 +45,6 @@ private:
         return _direction;
 
     }
-    
+    std::string getClassName(){return "Wide_sensor";};
 };
 

@@ -19,8 +19,11 @@ public:
         if (_count >= 5) return;
         _sensors[_count++] = new_sensor;
     }
+    void changeValue(size_t i){
+        _sensors[i]->changeValueBase();
+    };
     void printSensor(size_t i){
-        std::cout << _sensors[i]->getValue() << std::endl;
+        std::cout << _sensors[i]->getClassName() << ": " << _sensors[i]->getValue() << std::endl;
     }
     ~Sensors();
 };
