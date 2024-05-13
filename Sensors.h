@@ -13,10 +13,10 @@ private:
     size_t _count = 0;
 public:
     Sensors(){
-        _sensors = new Base_sensor*[100];
+        _sensors = new Base_sensor*[5];
     };
     void appendSensor(Base_sensor* new_sensor){
-        if (_count >= 100) return;
+        if (_count >= 5) return;
         _sensors[_count++] = new_sensor;
     }
     void printSensor(size_t i){
