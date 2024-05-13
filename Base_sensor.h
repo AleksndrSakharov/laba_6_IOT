@@ -21,9 +21,7 @@ private:
 
     };
 public:
-    Base_sensor(){
-        _value = 10;
-    };
+    Base_sensor() = delete;
     Base_sensor(double value) : _value(value){
 
     }
