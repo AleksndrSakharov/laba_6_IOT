@@ -3,11 +3,12 @@
 class co2: public Base_sensor
 {
 private:
-
+    int _max = 100;
+    int _min = 0;
 public:
      co2(){
          srand(time(NULL));
-         makeGen(0, 100);
+         makeGen(_min, _max);
 
      };
     // double operator()(){
