@@ -14,8 +14,8 @@ protected:
 private:
     virtual void Gener(int min1, int max1){
         srand(time(NULL));
-        int t = -min1*10 + rand() % (max1*10 + 1);
-        _value = t / 100.0;
+        int t = min1*10 + (rand() % (max1*10 - min1*10));
+        _value = t / 10.0;
         _value = std::max(static_cast<double>(min1), _value);
         _value = std::min(static_cast<double>(max1), _value);
 
@@ -27,6 +27,7 @@ public:
     Base_sensor(double value) : _value(value){
 
     }
+    inline double getValue(){return _value;};
     void makeGen(int minim, int maxim){
         Gener(minim, maxim);
     }
