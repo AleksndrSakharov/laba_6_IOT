@@ -5,7 +5,7 @@ private:
 public:
      Humidity_sensor(){
          srand(time(NULL));
-         makeGen(600, 900);
+         makeGen(0, 100);
      }
     
 };

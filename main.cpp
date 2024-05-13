@@ -1,6 +1,7 @@
 #include "Sensors.h"
 
 int main(){
+    srand(time(NULL));
     Pressure_sensor* pres = new Pressure_sensor;
     Sensors store = Sensors();
     for (int i = 0; i < 100; i++){

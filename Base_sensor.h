@@ -12,12 +12,12 @@ class Base_sensor
 protected:
     double _value;
 private:
-    virtual void Gener(int min1, int max1){
+    virtual void Gener(int _min, int _max){
         srand(time(NULL));
-        int t = min1*10 + (rand() % (max1*10 - min1*10));
+        int t = _min*10 + (rand() % (_max*10 - _min*10));
         _value = t / 10.0;
-        _value = std::max(static_cast<double>(min1), _value);
-        _value = std::min(static_cast<double>(max1), _value);
+        _value = std::max(static_cast<double>(_min), _value);
+        _value = std::min(static_cast<double>(_max), _value);
 
     };
 public:
