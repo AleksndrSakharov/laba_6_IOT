@@ -18,8 +18,8 @@ private:
     Direction _direction;
     void Gener(){
         srand(time(NULL));
-        double w = -10 +rand()%21;
-        _value += w/10;
+        double w = rand()%300;
+        _value+= w/50.0;
         if (_value<_min) {
             _value = _min;
         }
@@ -45,6 +45,34 @@ private:
         return _direction;
 
     }
-    std::string getClassName(){return "Wide_sensor";};
+    void changeValueBase(){
+        srand(time(NULL));
+        int znak = rand() % 2;
+        if (znak == 0) znak = -1;
+        double w = (rand()%31) * znak;
+        _value += w/10.0;
+        if (_value<_min) {
+            _value = _min;
+        }
+        if (_value>_max){
+            _value = _max;
+        }
+        _direction = static_cast<Direction> (rand()%8);
+    }
+
+    std::string getClassName(){
+        switch (_direction) {
+            case Direction::North: return "Wide_sensor(Direction: North)";
+            case Direction::East: return "Wide_sensor(Direction: East)";
+            case Direction::West: return "Wide_sensor(Direction: West)";
+            case Direction::South: return "Wide_sensor(Direction: South)";
+            case Direction::Northeast: return "Wide_sensor(Direction: Northeast)";
+            case Direction::Northwest: return "Wide_sensor(Direction: Northwest)";
+            case Direction::Southeast: return "Wide_sensor(Direction: Southeast)";
+            case Direction::Southwest: return "Wide_sensor(Direction: Southwest)";
+            default: return "Wide_sensor";
+        }
+
+    };
 };
 

@@ -7,7 +7,7 @@ private:
     static const int _min = 0;
 public:
      co2(): Base_sensor(_min, _max){
-        srand(time(NULL));
+
      };
     std::string getClassName(){return "co2_sensor";};
     // double operator()(){

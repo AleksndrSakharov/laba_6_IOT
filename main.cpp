@@ -19,15 +19,22 @@ int main(){
     store.appendSensor(wide);
     store.appendSensor(co2_sens);
     store.appendSensor(temp);
-//    while (count_time < 31){
+    while (count_time < 10){
         for (int i = 0; i < 5; i++){
             store.printSensor(i);
+            store.changeValue(i);
         }
-//        sleep_for(nanoseconds(10));
-//        sleep_until(system_clock::now() + seconds(1));
-//        count_time++;
-//    }
+        sleep_for(nanoseconds(10));
+        sleep_until(system_clock::now() + seconds(10));
+        std::cout << "====================" << std::endl;
+        count_time++;
+    }
 
     delete [] pres;
+    delete [] hum;
+    delete [] temp;
+    delete [] co2_sens;
+    delete [] wide;
+
     return 0;
 }
